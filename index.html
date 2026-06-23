@@ -155,12 +155,87 @@
             text-align: center;
             line-height: 2.4;
         }
+        .poem-line {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .bunches {
+            font-size: 1.8rem;
+            margin-top: 15px;
+        }
+
+        /* شاشة احتفال المفرقعات والـ Glow المحسنة واللامعة بالكامل */
+        #celebration-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #05020a;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+            overflow: hidden;
+            transition: opacity 0.5s ease;
+        }
+        
+        /* تأثير النيون المشع والمتحرك للشعر والاسم في الشاشة النهائية */
+        .celebration-poem {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 2;
+            margin-bottom: 30px;
+            color: #fff;
+            text-align: center;
+            z-index: 10;
+            user-select: none;
+            animation: textShine 1.2s ease-in-out infinite alternate;
+        }
+        
+        .glow-text {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            z-index: 10;
+            user-select: none;
+            animation: textShine 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes textShine {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff007f, 0 0 35px #ff007f, 0 0 50px #ff007f;
+                transform: scale(0.97);
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 35px #00ffff, 0 0 60px #00ffff, 0 0 90px #00ffff;
+                transform: scale(1.03);
+            }
+        }
+        
+        /* جزيئات المفرقعات */
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
         @media(max-width: 768px) {
             h1 { font-size: 3rem }
             .subtitle { font-size: 1.2rem }
             .message { font-size: 1.05rem }
             .intro-text { font-size: 1.5rem }
             .question-marks { font-size: 2.2rem }
+            .poem-line { font-size: 1.1rem; }
+            .celebration-poem { font-size: 1.2rem; margin-bottom: 20px; }
+            .glow-text { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -183,29 +258,29 @@
         أنا لا أحتفل اليوم بانتهاءِ عامٍ دراسيّ، بل أحتفل بكِ أنتِ.. بنجاحِكِ، وإتمامِكِ عاماً لم يكن ككلِّ الأعوام.🗓️<br><br>
         وها أنا أذكّركِ بما قلتُه لكِ مع أول تحدياته: ستنجحين، وستصمدين، وتُبدعين..<br><b>لأنكِ ببساطة A2wa Miss w A2wa Imann🌷</b>
     </div>
-    <button onclick="showMessage()">💌 رسالة خاصة لإيمان</button>
+    <button onclick="showMessage()">💌قصيدة </button>
 </div>
 
 <div class="popup" id="popup">
     <div class="popup-content">
-        <h2>إلى إيمان</h2>
-        <p>
-            حين ينتهي العام الدراسي، قد تُغلق الكتب، وتُطفأ أضواء الصفوف، وتنتهي الحصص... لكن أثر المعلمة الحقيقية لا ينتهي.
-            <br><br>
-            عامٌ كامل من الجهد والصبر والعطاء... عام رغم قلة ميزانه إلا أنكِ أصررتِ على ملئه بالتوازن، ونجحتِ كعادتكِ.
-            <br><br>
-            قد ينسى الطلاب بعض الدروس لكنهم لن ينسوا معلمتهم وأمهم الثانية، مصدر تشجيعهم وسبب نجاحهم.
-            <br><br>
-            أنا لا أحتفل بانتهاء عام دراسيّ.. بل أحتفل بكِ، بنجاحكِ، وبإتمامكِ عاماً ليس ككلِّ الأعوام. ولأنّي كنت قد قلت لكِ إنكِ ستنجحين وتصمدين وتبدعين... لأنكِ A2wa Miss و A2wa Imann.
-            <br><br>
-            فخورة بكِ الأيام، وفخورٌ بكِ كل من عرف إخلاصك واجتهادك.
-            <br><br>
-            🌷 مبارك انتهاء العام الدراسي يا إيمان 🌷
-            <br><br>
-            ✨ A2wa Imann ✨
-        </p>
-        <button onclick="closeMessage()">إغلاق</button>
+        <h2>إلى إيمان 🌷</h2>
+        <br>
+        <div class="poem-line">أُراقِبُ الوَقتَ عَن كَثَبٍ وَأَبتَسِمُ <br> وَالقَلبُ مِن فَرَحِ الأخبَارِ يَنْسَجِمُ</div>
+        <div class="poem-line">اليَومَ أَنهَى طُلَّابُهَا دَرساً <br> وَانفَكَّ قَيْدٌ مَنِ الأَتْعَابِ تَلْتَزِمُ</div>
+        <div class="poem-line">أَظُنُّهَا طَارَتْ إِيمَانُ مِنْ فَرَحٍ <br> كَأَنَّهَا الزَّهْرُ فِي آذَارَ يَبْتَسِمُ</div>
+        <div class="poem-line">أَحسَستُهَا عَادَتْ إِيمَانُ مِنْ سَفَرٍ <br> إِنَّ الرَّبِيعَ بِوَادِي الحَيِّ يَلتَئِمُ</div>
+        <div class="poem-line">أَرجُو السُّرُورَ لِأَرْوَعِ مَنْ لَهُ قَلَمٌ <br> وَإِن سُئِلْتُ أَأَقوَاهُمْ؟ أَقُل نَعَمْ!</div>
+        <div class="poem-line">الحَمْدُ للهِ مَرَّ الصَّعْبُ قَدْ نَجَحُوا <br> وَالكُلُّ بِـ"تَوَازُنٍ" قَدْ بِاتَ يَنْغَرِمُ</div>
+        
+        <div class="bunches">🌷🌷🌷</div>
+        <br>
+        <button onclick="closeMessage()">ختاماً اضغطي</button>
     </div>
+</div>
+
+<div id="celebration-overlay">
+    <div class="celebration-poem">والظَّنُّ كلُّ الظَّنِّ منكِ أن أرى<br>ما يُوجبُ الشِّعر في عامكِ القادمْ</div>
+    <div class="glow-text">A2wa Imann 🌚🌟</div>
 </div>
 
 <script>
@@ -233,8 +308,74 @@
     function showMessage() {
         document.getElementById("popup").style.display = "flex";
     }
+
+    // صنع انفجار مفرقعات حقيقي
+    function createFireworkExplosion(overlay) {
+        const colors = ['#ff0055', '#00ffcc', '#ffcc00', '#ff00ff', '#00ff00', '#ffff00', '#ff5500', '#0099ff'];
+        
+        const startX = 15 + Math.random() * 70; 
+        const startY = 15 + Math.random() * 70;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        const particleCount = 40; 
+        
+        for (let i = 0; i < particleCount; i++) {
+            let particle = document.createElement("div");
+            particle.className = "sparkle";
+            particle.style.left = startX + "vw";
+            particle.style.top = startY + "vh";
+            particle.style.backgroundColor = color;
+            particle.style.boxShadow = `0 0 8px ${color}, 0 0 15px ${color}`;
+            
+            const angle = (i * (360 / particleCount)) * (Math.PI / 180);
+            const speed = 3 + Math.random() * 5; 
+            const velocityX = Math.cos(angle) * speed;
+            const velocityY = Math.sin(angle) * speed;
+            
+            overlay.appendChild(particle);
+            
+            let posX = 0;
+            let posY = 0;
+            let opacity = 1;
+            
+            const moveParticle = setInterval(() => {
+                posX += velocityX;
+                posY += velocityY + 0.1;
+                opacity -= 0.03;
+                
+                particle.style.transform = `translate(${posX}px, ${posY}px)`;
+                particle.style.opacity = opacity;
+                
+                if (opacity <= 0) {
+                    clearInterval(moveParticle);
+                    particle.remove();
+                }
+            }, 25);
+        }
+    }
+
+    // إغلاق النافذة وتشغيل شاشة المفرقعات لـ 4 ثوانٍ
     function closeMessage() {
         document.getElementById("popup").style.display = "none";
+        
+        const overlay = document.getElementById("celebration-overlay");
+        overlay.style.display = "flex";
+
+        createFireworkExplosion(overlay);
+        createFireworkExplosion(overlay);
+
+        const fireworkInterval = setInterval(() => {
+            createFireworkExplosion(overlay);
+        }, 300);
+
+        setTimeout(() => {
+            clearInterval(fireworkInterval);
+            overlay.style.opacity = "0";
+            setTimeout(() => {
+                overlay.style.display = "none";
+                overlay.style.opacity = "1";
+            }, 500);
+        }, 10000);
     }
 </script>
 
