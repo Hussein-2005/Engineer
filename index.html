@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2wa Imann 🎓</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+            background-size: 400% 400%;
+            animation: bg 12s ease infinite;
+            overflow-x: hidden;
+        }
+        @keyframes bg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 1.5s ease;
+        }
+        .intro-content {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .question-marks {
+            font-size: 3rem;
+            animation: float 2s infinite ease-in-out;
+        }
+        .intro-text {
+            font-size: 2rem;
+            margin-top: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: .5; }
+            50% { opacity: 1; }
+            100% { opacity: .5; }
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 30px;
+            max-width: 850px;
+        }
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 25px rgba(255,255,255,.8);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fade 2s forwards;
+            animation-delay: 1s;
+        }
+        .message {
+            font-size: 1.3rem;
+            line-height: 2.3;
+            background: rgba(255,255,255,.15);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 25px;
+            opacity: 0;
+            animation: fade 2s forwards;
+            animation-delay: 2.5s;
+        }
+        @keyframes fade {
+            to { opacity: 1; }
+        }
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: white;
+            color: #a14ecf;
+            font-weight: bold;
+            transition: .3s;
+            font-family: 'Cairo', sans-serif;
+        }
+        button:hover {
+            transform: scale(1.08);
+        }
+        .star {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            color: white;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from { transform: translateY(-100vh); }
+            to { transform: translateY(110vh); }
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.75);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 999;
+        }
+        .popup-content {
+            background: white;
+            color: #444;
+            padding: 35px;
+            border-radius: 25px;
+            max-width: 650px;
+            width: 95%;
+            max-height: 85vh;
+            overflow-y: auto;
+            text-align: center;
+            line-height: 2.4;
+        }
+        @media(max-width: 768px) {
+            h1 { font-size: 3rem }
+            .subtitle { font-size: 1.2rem }
+            .message { font-size: 1.05rem }
+            .intro-text { font-size: 1.5rem }
+            .question-marks { font-size: 2.2rem }
+        }
+    </style>
+</head>
+<body>
+
+<div id="intro">
+    <div class="intro-content">
+        <div class="question-marks">❓ 🎁 ❓ 🤗 ❓ 🎁 ❓</div>
+        <div class="intro-text">لديّ شيء صغير لأقوى معلمة...</div>
+    </div>
+</div>
+
+<div class="container">
+    <h1>✨ A2wa Imann ✨</h1>
+    <div class="subtitle">🎓 مبارك انتهاء العام الدراسي 🎓</div>
+    <div class="message">
+        عامٌ كامل من الجهدِ، والصبرِ، والعطاء..<br>
+        عامٌ رغْمَ اختلالِ ميزانِهِ وثقل تحدّياتِه، إلّا أنكِ أصررتِ على ملئِهِ بالتوازنِ وما أدراك ما "توازن"، ونجحتِ كعادتِكِ دائماً.🌚<br><br>
+        قد تنسي الأيام الطلابَ بعض الدروس ، لكنهم أبداً لن ينسوا معلمتَهم وأمَّهم الثانية، من كانت مصدرَ تشجيعِهم وسرَّ نجاحِهم.🌟<br><br>
+        أنا لا أحتفل اليوم بانتهاءِ عامٍ دراسيّ، بل أحتفل بكِ أنتِ.. بنجاحِكِ، وإتمامِكِ عاماً لم يكن ككلِّ الأعوام.🗓️<br><br>
+        وها أنا أذكّركِ بما قلتُه لكِ مع أول تحدياته: ستنجحين، وستصمدين، وتُبدعين..<br><b>لأنكِ ببساطة A2wa Miss w A2wa Imann🌷</b>
+    </div>
+    <button onclick="showMessage()">💌 رسالة خاصة لإيمان</button>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>إلى إيمان ❤️</h2>
+        <p>
+            حين ينتهي العام الدراسي، قد تُغلق الكتب، وتُطفأ أضواء الصفوف، وتنتهي الحصص... لكن أثر المعلمة الحقيقية لا ينتهي.
+            <br><br>
+            عامٌ كامل من الجهد والصبر والعطاء... عام رغم قلة ميزانه إلا أنكِ أصررتِ على ملئه بالتوازن، ونجحتِ كعادتكِ.
+            <br><br>
+            قد ينسى الطلاب بعض الدروس لكنهم لن ينسوا معلمتهم وأمهم الثانية، مصدر تشجيعهم وسبب نجاحهم.
+            <br><br>
+            أنا لا أحتفل بانتهاء عام دراسيّ.. بل أحتفل بكِ، بنجاحكِ، وبإتمامكِ عاماً ليس ككلِّ الأعوام. ولأنّي كنت قد قلت لكِ إنكِ ستنجحين وتصمدين وتبدعين... لأنكِ A2wa Miss و A2wa Imann.
+            <br><br>
+            فخورة بكِ الأيام، وفخورٌ بكِ كل من عرف إخلاصك واجتهادك.
+            <br><br>
+            🌷 مبارك انتهاء العام الدراسي يا إيمان 🌷
+            <br><br>
+            ✨ A2wa Imann ✨
+        </p>
+        <button onclick="closeMessage()">إغلاق</button>
+    </div>
+</div>
+
+<script>
+    // Generate falling stars
+    for (let i = 0; i < 70; i++) {
+        let star = document.createElement("div");
+        star.innerHTML = Math.random() > 0.5 ? "✨" : "🎓";
+        star.className = "star";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.fontSize = (10 + Math.random() * 25) + "px";
+        star.style.animationDuration = (5 + Math.random() * 10) + "s";
+        document.body.appendChild(star);
+    }
+
+    // Handle intro screen fade out
+    setTimeout(() => {
+        const intro = document.getElementById("intro");
+        intro.style.opacity = "0";
+        setTimeout(() => {
+            intro.remove();
+        }, 1500);
+    }, 3000);
+
+    // Modal popup control
+    function showMessage() {
+        document.getElementById("popup").style.display = "flex";
+    }
+    function closeMessage() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
